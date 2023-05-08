@@ -81,6 +81,12 @@ public class NacosContextProperties {
 	@Value("${spring.cloud.nacos.discovery.group:DEFAULT_GROUP}")
 	private String group = DEFAULT_GROUP;
 
+	/**
+	 * namespace for nacos.
+	 */
+	@Value("${spring.cloud.nacos.discovery.namespace:public}")
+	private String namespace;
+
 	private String contextPath;
 
 	public boolean isEnabled() {
@@ -155,6 +161,14 @@ public class NacosContextProperties {
 		this.contextPath = contextPath;
 	}
 
+	public String getNamespace() {
+		return namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
 	@Override
 	public String toString() {
 		return "NacosContextProperties{" +
@@ -167,6 +181,7 @@ public class NacosContextProperties {
 				", clusterName='" + clusterName + '\'' +
 				", group='" + group + '\'' +
 				", contextPath='" + contextPath + '\'' +
+				", namespace='" + namespace + '\'' +
 				'}';
 	}
 }
