@@ -84,7 +84,7 @@ public class NacosContextProperties {
 	/**
 	 * namespace for nacos.
 	 */
-	@Value("${spring.cloud.nacos.discovery.namespace:public}")
+	@Value("${spring.cloud.nacos.discovery.namespace:}")
 	private String namespace;
 
 	private String contextPath;
